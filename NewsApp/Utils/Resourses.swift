@@ -10,7 +10,9 @@ import UIKit
 enum R {
     
     enum Images {
-        
+        static var feed = UIImage(named: "feed")
+        static var favorites = UIImage(named: "favorites")
+        static var profile = UIImage(named: "profile")
     }
     
     enum Strings {
