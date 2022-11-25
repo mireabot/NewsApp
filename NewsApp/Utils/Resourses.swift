@@ -14,6 +14,8 @@ enum R {
         static var favorites = UIImage(named: "favorites")
         static var profile = UIImage(named: "profile")
         static var search = UIImage(named: "search")
+        static var notification = UIImage(named: "notification")
+        static var articleDemo = UIImage(named: "articleDemo")
     }
     
     enum Strings {

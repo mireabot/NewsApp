@@ -24,6 +24,16 @@ class FeedController: UIViewController {
         return tf
     }()
     
+    private let notificationButton: UIButton = {
+        let button = UIButton()
+        button.setImage(R.Images.notification, for: .normal)
+        button.addTarget(self, action: #selector(handleNotification), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private let article = ArticleItemView()
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -38,17 +48,34 @@ class FeedController: UIViewController {
     
     private func createUI() {
         view.addSubview(searchTextField)
+        view.addSubview(notificationButton)
+        view.addSubview(article)
     }
     
     private func layout() {
         searchTextField.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
             make.leading.equalToSuperview().offset(15)
-            make.trailing.equalToSuperview().offset(-15)
             make.height.equalTo(40)
+        }
+        
+        notificationButton.snp.makeConstraints { make in
+            make.centerY.equalTo(searchTextField.snp.centerY)
+            make.leading.equalTo(searchTextField.snp.trailing).offset(10)
+            make.trailing.equalToSuperview().offset(-15)
+            make.width.height.equalTo(24)
+        }
+        
+        article.snp.makeConstraints { make in
+            make.top.equalTo(searchTextField.snp.bottom).offset(10)
+            make.leading.equalTo(searchTextField.snp.leading)
+            make.trailing.equalToSuperview().offset(-15)
         }
     }
     
     //MARK: - Selectors
+    
+    @objc func handleNotification() {
+        debugPrint("Notification")
+    }
 }
-
