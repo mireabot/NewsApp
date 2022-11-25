@@ -13,6 +13,7 @@ enum R {
         static var feed = UIImage(named: "feed")
         static var favorites = UIImage(named: "favorites")
         static var profile = UIImage(named: "profile")
+        static var search = UIImage(named: "search")
     }
     
     enum Strings {
@@ -35,5 +36,8 @@ enum R {
     enum Colors {
         static var primary = UIColor(named: "primary")
         static var secondary = UIColor(named: "secondary")
+        static var secondaryGray = UIColor(named: "secondaryGray")
+        static var secondaryText = UIColor(named: "secondaryText")
+        static var gray2 = UIColor(named: "gray2")
     }
 }
