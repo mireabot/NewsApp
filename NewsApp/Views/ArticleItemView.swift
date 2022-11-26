@@ -7,15 +7,37 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
-class ArticleItemView: UIView {
+class NewsViewModel {
+    let title: String
+    let content: String
+    let publisher: String
+    let publishDate: String
+    let imageURL: URL?
+    var imageData: Data? = nil
+    let author: String
+    let articleURL: String
+    
+    init(title: String, content: String, publisher: String, publishDate: String, imageURL: URL?, author: String, articleURL: String) {
+        self.title = title
+        self.content = content
+        self.publisher = publisher
+        self.publishDate = publishDate
+        self.imageURL = imageURL
+        self.author = author
+        self.articleURL = articleURL
+    }
+}
+
+class ArticleItemView: UITableViewCell {
     //MARK: - Properties
     
     private let articleImage : UIImageView = {
         let iv = UIImageView()
         iv.image = R.Images.articleDemo
         iv.layer.cornerRadius = 16
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         iv.layer.masksToBounds = true
         
         return iv
@@ -37,8 +59,8 @@ class ArticleItemView: UIView {
         let label = UILabel()
         label.font = R.Fonts.bold(with: 15)
         label.textAlignment = .left
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 0
+        label.lineBreakMode = .byTruncatingTail
+        label.numberOfLines = 3
         label.text = "Augmented Reality Trends for 2022"
         
         return label
@@ -56,8 +78,8 @@ class ArticleItemView: UIView {
     
     //MARK: - Lifecycle
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         createUI()
         createLayout()
     }
@@ -67,6 +89,24 @@ class ArticleItemView: UIView {
     }
     
     //MARK: - Helpers
+    
+    func configureData(with news: NewsViewModel) {
+        articleTitle.text = news.title
+        authourLabel.text = news.publisher
+        articleDate.text = news.publishDate
+        
+        if let data = news.imageData {
+            articleImage.image = UIImage(data: data)
+        }
+        else if let url = news.imageURL {
+            DispatchQueue.main.async {
+                self.articleImage.sd_setImage(with: url)
+            }
+        }
+        else {
+            articleImage.image = R.Images.articleDemo
+        }
+    }
     
     private func createUI() {
         addSubview(articleImage)
@@ -90,9 +130,10 @@ class ArticleItemView: UIView {
         }
         
         articleTitle.snp.makeConstraints { make in
-            make.bottom.equalTo(articleImage.snp.bottom)
-            make.leading.equalTo(articleImage.snp.trailing).offset(5)
+            make.top.equalTo(authourLabel.snp.bottom).offset(10)
+            make.leading.equalTo(articleImage.snp.trailing).offset(10)
             make.trailing.equalTo(articleDate.snp.trailing)
+//            make.bottom.equalTo(articleImage.snp.bottom).offset()
         }
         
         articleDate.snp.makeConstraints { make in

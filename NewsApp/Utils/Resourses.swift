@@ -16,6 +16,7 @@ enum R {
         static var search = UIImage(named: "search")
         static var notification = UIImage(named: "notification")
         static var articleDemo = UIImage(named: "articleDemo")
+        static var arrow = UIImage(named: "arrow")
     }
     
     enum Strings {
@@ -23,7 +24,7 @@ enum R {
     }
     
     enum API {
-        
+        static var key = "pub_138790f8baed8e896313d6ddec1db2febfb0e"
     }
     
     enum Fonts {

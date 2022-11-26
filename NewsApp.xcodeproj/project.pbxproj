@@ -22,6 +22,10 @@
 		3537147829300EFE0083BF3A /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537147729300EFE0083BF3A /* FeedController.swift */; };
 		3537147A29300FB80083BF3A /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537147929300FB80083BF3A /* FavoritesController.swift */; };
 		3537147C29300FDD0083BF3A /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537147B29300FDD0083BF3A /* ProfileController.swift */; };
+		35ED7E922931B200002DAD33 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 35ED7E912931B200002DAD33 /* SDWebImage */; };
+		35ED7E942931B7AD002DAD33 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ED7E932931B7AD002DAD33 /* ArticleViewController.swift */; };
+		35FC0F2E29313BE100A7908C /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC0F2D29313BE100A7908C /* APIResponse.swift */; };
+		35FC0F3029313C6F00A7908C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC0F2F29313C6F00A7908C /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,9 @@
 		3537147729300EFE0083BF3A /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		3537147929300FB80083BF3A /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		3537147B29300FDD0083BF3A /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		35ED7E932931B7AD002DAD33 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		35FC0F2D29313BE100A7908C /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		35FC0F2F29313C6F00A7908C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35ED7E922931B200002DAD33 /* SDWebImage in Frameworks */,
 				353194F729308DD900B9274E /* SnapKit in Frameworks */,
 				353194FA29308DE800B9274E /* Alamofire in Frameworks */,
 			);
@@ -91,6 +99,7 @@
 		3537145C293002E70083BF3A /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				35FC0F2C29313BD600A7908C /* API */,
 				353195002931095600B9274E /* Elements */,
 				353194FD2930940E00B9274E /* Views */,
 				353714742930093A0083BF3A /* Controllers */,
@@ -120,8 +129,18 @@
 				3537147729300EFE0083BF3A /* FeedController.swift */,
 				3537147929300FB80083BF3A /* FavoritesController.swift */,
 				3537147B29300FDD0083BF3A /* ProfileController.swift */,
+				35ED7E932931B7AD002DAD33 /* ArticleViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		35FC0F2C29313BD600A7908C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				35FC0F2D29313BE100A7908C /* APIResponse.swift */,
+				35FC0F2F29313C6F00A7908C /* NetworkManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +162,7 @@
 			packageProductDependencies = (
 				353194F629308DD900B9274E /* SnapKit */,
 				353194F929308DE800B9274E /* Alamofire */,
+				35ED7E912931B200002DAD33 /* SDWebImage */,
 			);
 			productName = NewsApp;
 			productReference = 3537145A293002E70083BF3A /* NewsApp.app */;
@@ -175,6 +195,7 @@
 			packageReferences = (
 				353194F529308DD900B9274E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				353194F829308DE800B9274E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				35ED7E902931B200002DAD33 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 3537145B293002E70083BF3A /* Products */;
 			projectDirPath = "";
@@ -205,13 +226,16 @@
 				3537147C29300FDD0083BF3A /* ProfileController.swift in Sources */,
 				35371476293009F60083BF3A /* TabBarViewController.swift in Sources */,
 				353195022931096E00B9274E /* NAPaddingTextView.swift in Sources */,
+				35FC0F3029313C6F00A7908C /* NetworkManager.swift in Sources */,
 				35371473293003970083BF3A /* Resourses.swift in Sources */,
 				353194FC2930926900B9274E /* Extensions.swift in Sources */,
 				3537147829300EFE0083BF3A /* FeedController.swift in Sources */,
 				3537145E293002E70083BF3A /* AppDelegate.swift in Sources */,
 				35371460293002E70083BF3A /* SceneDelegate.swift in Sources */,
+				35ED7E942931B7AD002DAD33 /* ArticleViewController.swift in Sources */,
 				353194FF2931076900B9274E /* FilterCell.swift in Sources */,
 				3537147A29300FB80083BF3A /* FavoritesController.swift in Sources */,
+				35FC0F2E29313BE100A7908C /* APIResponse.swift in Sources */,
 				3531950429310EB100B9274E /* ArticleItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +468,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		35ED7E902931B200002DAD33 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -456,6 +488,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 353194F829308DE800B9274E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		35ED7E912931B200002DAD33 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35ED7E902931B200002DAD33 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

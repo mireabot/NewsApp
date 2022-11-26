@@ -28,3 +28,39 @@ extension UITextField {
         
     }
 }
+
+
+extension Date {
+    func makeString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        formatter.locale = Locale(identifier: "en_US-POSIX")
+        
+        return formatter.string(from: self)
+    }
+    
+    func makeStringforAPI() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        formatter.locale = Locale(identifier: "en_US-POSIX")
+        
+        return formatter.string(from: self)
+    }
+}
+
+
+extension String {
+    func makeDate() -> Date {
+        let formatter = DateFormatter()
+        
+        return formatter.date(from: self) ?? Date()
+    }
+}
+
+
+extension UIBarButtonItem {
+    func addTargetForAction(target: AnyObject, action: Selector) {
+        self.target = target
+        self.action = action
+    }
+}
